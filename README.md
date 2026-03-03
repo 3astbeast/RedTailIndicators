@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/3astbeast/RedTailIndicators/blob/main/redtail-logo.png" width="200" alt="RedTail Indicators Logo"/>
+  <img src="[https://github.com/3astbeast/RedTailIndicators/blob/main/redtail-logo.png](https://avatars.githubusercontent.com/u/209633456?v=4)" width="200" alt="RedTail Indicators Logo"/>
 </p>
 
 <h1 align="center">RedTail Indicators</h1>
