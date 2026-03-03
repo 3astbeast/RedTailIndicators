@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://buymeacoffee.com/dmwyzlxstj" target="_blank" rel="noopener noreferrer">
+  <a href="https://buymeacoffee.com/dmwyzlxstj">
     <img src="https://img.shields.io/badge/☕_Buy_Me_a_Coffee-Support_My_Work-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee"/>
   </a>
 </p>
@@ -122,6 +122,46 @@ A full Smart Money / ICT-style market structure indicator for NinjaTrader 8 that
 
 ---
 
+### 🔴 [RedTail FRVP](https://github.com/3astbeast/RedTail-FRVP)
+
+A standalone Fibonacci Retracement + Volume Profile indicator for NinjaTrader 8. This is the FRVP engine from RedTail Market Structure extracted into its own lightweight indicator — same powerful analysis without the order blocks, strong/weak levels, or other market structure overlays. Ideal if you want clean FRVP zones on your chart without the full market structure suite.
+
+**How It Works**
+- Runs its own internal market structure engine (BOS/CHoCH detection with configurable swing length) silently in the background
+- When a structural shift is detected, it automatically builds a Fibonacci retracement zone with an embedded volume profile across the swing range
+- Trigger mode: **CHoCH** or **BOS (Confirmed Trend)** — your choice
+- Option to keep or replace previous FRVP zones as new ones form
+
+**Volume Profile**
+- Full volume profile rendered within each FRVP zone with **POC** and **Value Area** (VAH/VAL)
+- Configurable row count (resolution), profile width, and left/right alignment
+- Volume display: Standard, Bullish, Bearish, or Both (split delta with polarity tracking)
+- **Adaptive rendering** with configurable smoothing passes and auto-sized bar heights
+- **Gradient fill** option for visual depth
+- Boundary outline with configurable color, opacity, and width
+
+**Fibonacci Levels**
+- Up to **10 fully customizable Fibonacci levels** with individual colors
+- Default levels: 0, 23.6, 38.2, 50, 61.8, 78.6, 100 (set any level to -1 to disable)
+- Optional price labels and level extension beyond the zone
+- Configurable line width, style, and opacity
+
+**Anchored VWAP**
+- AVWAP automatically anchored from the swing origin point
+- Optional right extension and label display
+- Independent color, width, style, and opacity settings
+
+**Cluster Level Detection**
+- **K-Means clustering** identifies volume concentration zones within each FRVP
+- Configurable cluster count (2–10), iterations, and rows per cluster for POC detection
+- Up to 5 individually colored cluster levels with optional labels and right extension
+
+**Alerts**
+- Optional sound alerts on BOS and CHoCH events
+- Configurable .wav sound files for each event type
+
+---
+
 ### 🔴 [RedTail Auto-VWAP](https://github.com/3astbeast/RedTail-Auto-VWAP)
 
 An all-in-one VWAP and key level indicator for NinjaTrader 8 that automatically plots multiple anchored VWAPs across every timeframe that matters for futures trading — session, daily, weekly, monthly, yearly — plus Opening Range and Initial Balance zones with full historical lookback.
@@ -182,7 +222,7 @@ Have questions, feature requests, or bugs to report? Open an **Issue** on the re
 ---
 
 <p align="center">
-  <a href="https://buymeacoffee.com/dmwyzlxstj" target="_blank" rel="noopener noreferrer">
+  <a href="https://buymeacoffee.com/dmwyzlxstj">
     <img src="https://img.shields.io/badge/☕_Buy_Me_a_Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee"/>
   </a>
 </p>
