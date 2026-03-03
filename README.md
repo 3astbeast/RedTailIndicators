@@ -89,6 +89,37 @@ A lightweight, standalone Low Volume Node detector for NinjaTrader 8. This is th
 
 ---
 
+### 🔴 [RedTail Toolbar & Drawing Tools](https://github.com/3astbeast/RedTail-Toolbar)
+
+A custom chart toolbar for NinjaTrader 8 that adds quick-access buttons for drawing tools and chart utilities, plus a suite of 6 custom drawing tools that replicate and extend functionality found in platforms like TradingView — all designed for speed during live trading.
+
+**Toolbar Features**
+- Installs as a persistent toolbar row at the top of your chart with one-click access to NinjaTrader's drawing tools
+- **Configurable tool selection** — choose which drawing tools appear in the toolbar, saved per user
+- **Hide/Show all drawings** — toggle all chart drawings visible or hidden with one click
+- **Lock/Unlock all drawings** — prevent accidental moves during live trading
+- **Indicator visibility manager** — toggle individual indicators on/off directly from the toolbar, with visibility state persisted across sessions
+- **ATR display** — live ATR value shown in the toolbar with configurable period
+- **Lag timer** — real-time latency monitor with configurable warning (yellow) and critical (red) thresholds
+- **Break Even button** — one-click move stop to breakeven with optional tick offset
+- **Pan Mode** — toggle free chart dragging without holding Ctrl
+
+**Drawing Tools Included**
+
+**RedTail FRVP Fib** — Click two anchor points to define a range, and the tool builds a full Fixed Range Volume Profile with Fibonacci levels, Anchored VWAP, and K-Means cluster detection inside the zone. Features include POC with Value Area, up to 10 customizable Fib levels with per-level colors, AVWAP with optional right extension, cluster levels (2–10 clusters), adaptive rendering with gradient fill and smoothing, boundary outline, and volume display types (Standard, Bullish, Bearish, Both). Essentially the FRVP indicator's analysis engine in a manual drawing tool.
+
+**RedTail VP Zone** — Draw a selection rectangle on the chart to generate a volume profile within that zone. Displays POC, VAH/VAL lines, optional zone fill with configurable opacity, range high/low extension lines, and a full volume histogram with alignment options. Useful for quick ad-hoc volume analysis on any price range without needing a dedicated indicator.
+
+**RedTail MTF Fib** — A multi-timeframe Fibonacci retracement drawing tool. Click two points to set your swing, then tag it with a timeframe label (e.g., Daily, Weekly, 4H, 1H, or custom). Up to 7 customizable Fib levels with per-level colors, optional price labels, right extension, and configurable line style/width/opacity. The timeframe label makes it easy to distinguish overlapping fibs from different timeframes.
+
+**RedTail Horizontal Line** — An enhanced horizontal line drawing tool with built-in text labels, price display, left/right extension options, and a hover-activated edit button for quick price adjustment via popup. Configurable label position (Left, Right, Center, Above, Below), line color, text color, dash style, width, and opacity.
+
+**RedTail Rectangle** — A feature-rich rectangle drawing tool with mid-line, extension lines, gradient fill, and labels. Fill modes include Solid, Gradient, and None. Optional mid-line with independent color/style and left/right extension. Top and bottom border lines can extend independently in either direction. Built-in label with configurable text and position.
+
+**RedTail Measure Tool** — A comprehensive measurement drawing tool that shows bars & time, price change in points/ticks, dollar value, percentage, velocity (ticks/bar), $/minute, net P&L after commission, volume, delta, and average volume per bar — all within a single measurement overlay. Configurable contract count and round-trip commission for accurate P&L calculation. Auto-colors green for long and red for short. Text placement options inside or outside the zone.
+
+---
+
 ### 🔴 [RedTail Volume](https://github.com/3astbeast/RedTail-Volume)
 
 A buy/sell volume separation indicator for NinjaTrader 8 that splits each bar's volume into estimated buying and selling pressure using OHLC proxy ratios, then stacks the winning side on top for instant visual read. Includes Ripster-style volume statistics panels and daily range tracking — all rendered in a dedicated sub-panel below the chart.
@@ -123,7 +154,7 @@ A buy/sell volume separation indicator for NinjaTrader 8 that splits each bar's 
 
 ### 🔴 [RedTail Market Structure](https://github.com/3astbeast/RedTail-Market-Structure)
 
-A full market structure indicator for NinjaTrader 8 that goes far beyond basic BOS detection. Combines swing structure analysis, volumized order blocks, integrated Fibonacci retracements with volume profiles, strong/weak level scoring, equal highs/lows detection, liquidity sweep identification, and a built-in voice alert system — all in one indicator.
+A full Smart Money / ICT-style market structure indicator for NinjaTrader 8 that goes far beyond basic BOS detection. Combines swing structure analysis, volumized order blocks, integrated Fibonacci retracements with volume profiles, strong/weak level scoring, equal highs/lows detection, liquidity sweep identification, and a built-in voice alert system — all in one indicator.
 
 **Market Structure Core**
 - **Break of Structure (BOS)** and **Change of Character (CHoCH)** detection with configurable swing length
