@@ -25,7 +25,7 @@
 
 ---
 
-### 🔴 [RedTail Volume Profile V2](https://github.com/3astbeast/RedTail-Volume-Profile)
+### 🔴 [RedTail Volume Profile](https://github.com/3astbeast/RedTail-Volume-Profile)
 
 A comprehensive volume profile indicator for NinjaTrader 8 with institutional-grade features packed into nearly 10,000 lines of NinjaScript. This is not a basic volume profile — it's a full-featured analysis suite designed for serious futures scalpers.
 
