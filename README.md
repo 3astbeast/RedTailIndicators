@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Free NinjaTrader 8 indicators built for futures traders who demand precision.</b><br>
-  Scalping-focused tools for MES, MNQ, MGC, and beyond.
+  Scalping-focused tools for ES, NQ, GC, and beyond.
 </p>
 
 <p align="center">
