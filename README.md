@@ -66,6 +66,29 @@ A comprehensive volume profile indicator for NinjaTrader 8 with institutional-gr
 
 ---
 
+### 🔴 [RedTail LVN Hunter](https://github.com/3astbeast/RedTail-LVN-Hunter)
+
+A lightweight, standalone Low Volume Node detector for NinjaTrader 8. This is the LVN detection engine extracted from RedTail Volume Profile into its own focused indicator — ideal if you just want clean LVN zones on your chart without the full volume profile overlay.
+
+**How It Works**
+- Builds an internal volume profile across a configurable lookback range, then scans for local volume troughs — price levels where volume is significantly lower than surrounding levels
+- Detected LVNs are drawn as shaded rectangles extending across the full chart, highlighting potential breakout zones and key support/resistance areas
+
+**Lookback Modes**
+- **Fixed Bars** — Analyzes the last N bars (configurable, 50–5000)
+- **Session** — Resets and recalculates at the start of each new session
+
+**Detection Settings**
+- **Profile Number of Rows** — Controls granularity of the volume analysis (more rows = finer/noisier LVNs, fewer rows = broader/smoother zones)
+- **LVN Detection %** — Sensitivity threshold for identifying troughs (lower = more sensitive)
+- **Show Adjacent LVN Nodes** — Expands each detected LVN to include the neighboring price levels above and below, creating wider zone rectangles
+
+**Display**
+- Customizable fill color, fill opacity, border color, and border opacity for all LVN rectangles
+- Optimized for performance — only calculates on real-time bars and the last historical bar to minimize loading time
+
+---
+
 ### 🔴 [RedTail Market Structure](https://github.com/3astbeast/RedTail-Market-Structure)
 
 A full Smart Money / ICT-style market structure indicator for NinjaTrader 8 that goes far beyond basic BOS detection. Combines swing structure analysis, volumized order blocks, integrated Fibonacci retracements with volume profiles, strong/weak level scoring, equal highs/lows detection, liquidity sweep identification, and a built-in voice alert system — all in one indicator.
