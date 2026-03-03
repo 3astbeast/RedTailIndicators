@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://buymeacoffee.com/dmwyzlxstj">
+  <a href="https://buymeacoffee.com/dmwyzlxstj" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/☕_Buy_Me_a_Coffee-Support_My_Work-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee"/>
   </a>
 </p>
@@ -25,7 +25,7 @@
 
 ---
 
-### 🔴 [RedTail Volume Profile V2](https://github.com/3astbeast/RedTail-Volume-Profile)
+### 🔴 [RedTail Volume Profile](https://github.com/3astbeast/RedTail-Volume-Profile)
 
 A comprehensive volume profile indicator for NinjaTrader 8 with institutional-grade features packed into nearly 10,000 lines of NinjaScript. This is not a basic volume profile — it's a full-featured analysis suite designed for serious futures scalpers.
 
@@ -66,7 +66,7 @@ A comprehensive volume profile indicator for NinjaTrader 8 with institutional-gr
 
 ---
 
-### 🔴 [RedTail Market Structure V2](https://github.com/3astbeast/RedTail-Market-Structure)
+### 🔴 [RedTail Market Structure](https://github.com/3astbeast/RedTail-Market-Structure)
 
 A full Smart Money / ICT-style market structure indicator for NinjaTrader 8 that goes far beyond basic BOS detection. Combines swing structure analysis, volumized order blocks, integrated Fibonacci retracements with volume profiles, strong/weak level scoring, equal highs/lows detection, liquidity sweep identification, and a built-in voice alert system — all in one indicator.
 
@@ -124,7 +124,40 @@ A full Smart Money / ICT-style market structure indicator for NinjaTrader 8 that
 
 ### 🔴 [RedTail Auto-VWAP](https://github.com/3astbeast/RedTail-Auto-VWAP)
 
-> *Description coming soon — uploading code for detailed writeup.*
+An all-in-one VWAP and key level indicator for NinjaTrader 8 that automatically plots multiple anchored VWAPs across every timeframe that matters for futures trading — session, daily, weekly, monthly, yearly — plus Opening Range and Initial Balance zones with full historical lookback.
+
+**VWAP Types**
+- **NY Session VWAP** — Anchored to the 9:30 AM ET open, calculates only during RTH (9:30 AM – 4:00 PM ET)
+- **Previous Day NY VWAP** — Yesterday's NY Session VWAP, continuing to develop with today's data
+- **Session VWAP** — Full futures session (6:00 PM ET start), with optional standard deviation bands
+- **Previous Session VWAP** — Prior session's VWAP with optional bands, continuing forward
+- **HOD VWAP** — Anchored VWAP from the High of Day, auto-resets on each new high
+- **LOD VWAP** — Anchored VWAP from the Low of Day, auto-resets on each new low
+- **Monthly VWAP** — Anchored to the start of each calendar month
+- **Yearly VWAP** — Anchored to the start of each calendar year
+- **HOY VWAP** — Anchored VWAP from the High of Year, auto-resets on each new yearly high
+
+Each VWAP has independent color, line style, and optional standard deviation bands with configurable multiplier.
+
+**Opening Range & Initial Balance**
+- **NY Opening Range** — Configurable time window (default 9:30–9:45 AM ET) with high/low lines, fill shading, and text labels
+- **Day Initial Balance** — Configurable time window (default 9:30–10:30 AM ET) with independent styling
+- Both support **historical lookback** — display previous sessions' ranges on the chart
+- **Overlapping level merging** — automatically consolidates OR/IB lines that sit on the same price
+
+**Display & Rendering**
+- All VWAPs rendered via SharpDX for smooth, high-performance chart rendering
+- Dynamic session coloring option — VWAP line changes color based on whether price is above or below
+- VWAP labels with configurable font size
+- Full EST timezone-aware session detection that handles both time-based and tick/range charts correctly
+- Historical VWAP rendering — display previous sessions' VWAP lines on the chart
+
+**Voice Alerts**
+- Built-in text-to-speech voice alert system — generates spoken alerts per instrument (e.g., "MNQ has touched the Session VWAP")
+- **Touch alerts** — fires when price crosses a VWAP level
+- **Approach alerts** — fires when price is within a configurable tick distance
+- Configurable cooldown timer to prevent spam
+- Fallback to standard .wav sound files if voice generation fails
 
 ---
 
@@ -149,7 +182,7 @@ Have questions, feature requests, or bugs to report? Open an **Issue** on the re
 ---
 
 <p align="center">
-  <a href="https://buymeacoffee.com/dmwyzlxstj">
+  <a href="https://buymeacoffee.com/dmwyzlxstj" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/☕_Buy_Me_a_Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee"/>
   </a>
 </p>
