@@ -122,7 +122,7 @@ A custom chart toolbar for NinjaTrader 8 that adds quick-access buttons for draw
 
 ### 🔴 [RedTail Volume](https://github.com/3astbeast/RedTail-Volume)
 
-A buy/sell volume separation indicator for NinjaTrader 8 that splits each bar's volume into estimated buying and selling pressure using OHLC proxy ratios, then stacks the winning side on top for instant visual read. Includes Ripster-style volume statistics panels and daily range tracking — all rendered in a dedicated sub-panel below the chart.
+A buy/sell volume separation indicator for NinjaTrader 8 that splits each bar's volume into estimated buying and selling pressure using OHLC proxy ratios, then stacks the winning side on top for instant visual read. Includes volume statistics panels and daily range tracking — all rendered in a dedicated sub-panel below the chart.
 
 **Buy/Sell Volume Separation**
 - Uses candle OHLC to calculate a proxy buy/sell ratio for each bar — (Close - Low) / Range for buyers, (High - Close) / Range for sellers
