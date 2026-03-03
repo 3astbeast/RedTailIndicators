@@ -217,6 +217,29 @@ A standalone Fibonacci Retracement + Volume Profile indicator for NinjaTrader 8.
 
 ---
 
+### 🔴 [RedTail Auto Fibs](https://github.com/3astbeast/RedTail-Auto-Fibs)
+
+An automatic multi-timeframe Fibonacci retracement indicator for NinjaTrader 8 that plots Daily, Weekly, and Monthly Fibonacci levels from the current period's developing high/low range — no manual drawing required.
+
+**Three Timeframes**
+- **Daily Fibs** — Retracements calculated from the current day's high and low, updating in real time as the range develops
+- **Weekly Fibs** — Retracements from the current week's high and low
+- **Monthly Fibs** — Retracements from the current month's high and low
+- Each timeframe toggleable independently
+
+**Per-Level Customization**
+- Up to **10 Fibonacci levels per timeframe** (30 total), each with independent enable/disable, value, and color
+- Default levels: 0, 23.6%, 38.2%, 50%, 61.8%, 78.6%, 100% with 3 additional extension slots (e.g., -27.2%, -61.8%, -100%)
+- Set any level to disabled to remove it from the chart
+
+**Display**
+- Independent **line style, line width, and opacity** per timeframe — easily distinguish daily (solid), weekly (dash), and monthly (dash-dot) at a glance
+- Optional **price labels** on each level with configurable font size
+- Configurable **line extension** beyond current bars and **lookback days** for historical display
+- Smart caching to avoid redundant redraws — only updates when high/low values actually change
+
+---
+
 ### 🔴 [RedTail Goldbach Po3 Levels](https://github.com/3astbeast/RedTail-Goldbach-Po3)
 
 A price level indicator for NinjaTrader 8 based on Goldbach number theory applied to Power of 3 (Po3) ranges. Maps mathematically significant price levels — Goldbach primes, semi-primes, inverted Goldbach numbers, and equilibrium points — onto configurable Po3 range partitions anchored from settlement price. Designed for traders who use ICT/Po3 methodology and want precise, mathematical reference levels on their charts.
@@ -338,6 +361,38 @@ Each VWAP has independent color, line style, and optional standard deviation ban
 
 ---
 
+### 🔴 [RedTail Quick Alert](https://github.com/3astbeast/RedTail-Quick-Alert)
+
+A hotkey-driven price alert tool for NinjaTrader 8. Hover your mouse at any price level and press a keyboard shortcut to instantly place an alert line — no dialog boxes, no menus, no clicks on the price axis. Designed for speed during live trading.
+
+**How It Works**
+- Hover your cursor at the desired price on the chart and press **Ctrl+A** (default) to set an alert at that exact price
+- Alert lines are drawn across the chart with a price label — when price crosses the level, a sound alert fires and optionally a popup appears
+- Press **Ctrl+Shift+Delete** (default) to remove all alerts at once
+- Click the **X button** rendered on any alert line to remove it individually
+
+**Trigger Modes**
+- **Cross** — triggers when price crosses through the alert level in either direction
+- **Touch From Above** — triggers only when price approaches from above
+- **Touch From Below** — triggers only when price approaches from below
+
+**Alert Options**
+- **Persistent alerts** — when enabled, alerts keep firing on each cross instead of one-shot
+- Configurable **.wav sound file** and optional NinjaTrader popup on trigger
+- Triggered alerts change color (default gray) so you can see which levels have already fired
+
+**Hotkey Customization**
+- Configurable alert hotkey letter/key and modifier (None, Ctrl, Shift, Ctrl+Shift)
+- Configurable remove-all hotkey and modifier
+- Supports letters, function keys, Delete, Space, and other standard keys
+
+**Visual**
+- **Crosshair preview line** — shows a dotted line at your cursor position before you commit the alert
+- Customizable alert line color, triggered line color, line style, line width, and label font size
+- Price labels displayed on the Y-axis panel
+
+---
+
 ### 🔴 [RedTail EMA Cloud](https://github.com/3astbeast/RedTail-EMA-Cloud)
 
 A multi-layered moving average cloud indicator for NinjaTrader 8 that renders up to 5 independent EMA (or SMA) clouds on your chart for visual trend identification at a glance. Each cloud is formed by the filled region between a short and long moving average pair, changing color based on bullish or bearish crossover state.
@@ -361,6 +416,28 @@ A multi-layered moving average cloud indicator for NinjaTrader 8 that renders up
 
 **Alerts**
 - Optional long and short crossover alerts when the short MA crosses above or below the long MA
+
+---
+
+### 🔴 [RedTail Candle Shadows](https://github.com/3astbeast/RedTail-Candle-Shadows)
+
+A visual enhancement indicator for NinjaTrader 8 that draws subtle drop shadows beneath candle bodies and wicks for improved depth and readability. A small cosmetic touch that makes charts easier on the eyes during long trading sessions.
+
+**Shadow Rendering**
+- Shadows drawn on both **candle bodies** and **wicks** (each toggleable independently)
+- Configurable **X and Y pixel offset** to control shadow direction and distance
+- **Wick opacity multiplier** — wicks get a lighter shadow than bodies for a natural look
+- Handles dojis gracefully with a minimum body height
+
+**Optional Blur Effect**
+- Simulates a soft shadow with multiple render passes at decreasing opacity
+- Configurable **blur passes** (1–3) for varying softness levels
+
+**Display**
+- Customizable **shadow color** and **opacity** (1–100%)
+- **Body width adjustment** — fine-tune the shadow width relative to the candle
+- Rendered via SharpDX for minimal performance impact
+- Optimized for scalping on low timeframes
 
 ---
 
