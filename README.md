@@ -89,6 +89,38 @@ A lightweight, standalone Low Volume Node detector for NinjaTrader 8. This is th
 
 ---
 
+### 🔴 [RedTail Volume](https://github.com/3astbeast/RedTail-Volume)
+
+A buy/sell volume separation indicator for NinjaTrader 8 that splits each bar's volume into estimated buying and selling pressure using OHLC proxy ratios, then stacks the winning side on top for instant visual read. Includes Ripster-style volume statistics panels and daily range tracking — all rendered in a dedicated sub-panel below the chart.
+
+**Buy/Sell Volume Separation**
+- Uses candle OHLC to calculate a proxy buy/sell ratio for each bar — (Close - Low) / Range for buyers, (High - Close) / Range for sellers
+- The **winning side always stacks on top**, giving you an immediate visual indication of who's in control and by how much
+- Color-coded bars (default green for buy, red for sell) with the dominant side rendered first
+
+**Volume Statistics Panel**
+- **30-Day Average Volume** — calculated from daily bars for a true multi-day reference
+- **Today's Cumulative Volume** — running total for the current session
+- **% of 30-Day Average** — how today's volume compares to the daily norm
+- **30-Bar Average** — rolling average on your current chart timeframe
+- **Current Bar Volume** — raw volume for the active bar
+- **% of 30-Bar Average** — relative volume for the current bar vs recent bars
+- **Buy/Sell Percentage** — real-time split showing the dominant side (winner always displayed on the left for quick reading)
+- **Unusual volume highlighting** — configurable threshold (default 200%) changes panel colors when volume spikes above normal
+
+**Daily Range Panel**
+- **30-Day Average Range** — calculated from daily bars
+- **Today's Range** — current session high minus low
+- **% of Average Range** — how today's range compares to the 30-day norm
+- Color-coded highlighting when range exceeds thresholds
+
+**Display**
+- Optional **SMA overlay** on volume bars with configurable length
+- Fully customizable panel colors — separate settings for normal, medium, and high states across both volume and range panels
+- Exposed plot outputs for Buy Volume, Sell Volume, and Volume Average — usable by strategies or other indicators
+
+---
+
 ### 🔴 [RedTail Market Structure](https://github.com/3astbeast/RedTail-Market-Structure)
 
 A full Smart Money / ICT-style market structure indicator for NinjaTrader 8 that goes far beyond basic BOS detection. Combines swing structure analysis, volumized order blocks, integrated Fibonacci retracements with volume profiles, strong/weak level scoring, equal highs/lows detection, liquidity sweep identification, and a built-in voice alert system — all in one indicator.
@@ -308,7 +340,27 @@ Each VWAP has independent color, line style, and optional standard deviation ban
 
 ### 🔴 [RedTail EMA Cloud](https://github.com/3astbeast/RedTail-EMA-Cloud)
 
-> *Description coming soon — uploading code for detailed writeup.*
+A multi-layered moving average cloud indicator for NinjaTrader 8 that renders up to 5 independent EMA (or SMA) clouds on your chart for visual trend identification at a glance. Each cloud is formed by the filled region between a short and long moving average pair, changing color based on bullish or bearish crossover state.
+
+**5 Independent Clouds**
+- **Cloud 1** — Default 8/9 (tight scalping cloud)
+- **Cloud 2** — Default 5/12 (short-term momentum)
+- **Cloud 3** — Default 34/50 (medium-term trend)
+- **Cloud 4** — Default 72/89 (intermediate trend)
+- **Cloud 5** — Default 180/200 (long-term trend)
+- Each cloud can be toggled on/off independently — use any combination that fits your style
+
+**MA Type Selection**
+- Switch between **EMA** and **SMA** globally — all 5 clouds recalculate with the selected type
+
+**Visual Customization**
+- Independent **bullish and bearish colors** for each cloud
+- Independent **opacity** control per cloud (0–100)
+- **Cloud leading offset** — shift clouds forward by N bars for anticipatory visual alignment
+- Optional **EMA line overlay** — draws the individual short and long MA lines on top of the clouds with rising/falling color coding
+
+**Alerts**
+- Optional long and short crossover alerts when the short MA crosses above or below the long MA
 
 ---
 
