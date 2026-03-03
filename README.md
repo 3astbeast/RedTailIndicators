@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <i>All indicators are free to use. If you find them helpful, donations are always appreciated but never required.</i>
+  <i>All indicators are free to use for personal trading. If you find them helpful, donations are always appreciated but never required. Please don't redistribute, rename, or resell this code — if you'd like to use it in a product or share it beyond personal use, just reach out first. I'm happy to talk. If I find you've repackaged these indicators and are attemtping to sell them for profit without my permission, you better buckle up!</i>
 </p>
 
 ---
