@@ -162,6 +162,46 @@ A standalone Fibonacci Retracement + Volume Profile indicator for NinjaTrader 8.
 
 ---
 
+### 🔴 [RedTail Goldbach Po3 Levels](https://github.com/3astbeast/RedTail-Goldbach-Po3)
+
+A price level indicator for NinjaTrader 8 based on Goldbach number theory applied to Power of 3 (Po3) ranges. Maps mathematically significant price levels — Goldbach primes, semi-primes, inverted Goldbach numbers, and equilibrium points — onto configurable Po3 range partitions anchored from settlement price. Designed for traders who use ICT/Po3 methodology and want precise, mathematical reference levels on their charts.
+
+**Two Operating Modes**
+- **Dynamic Mode** — Settlement price sits at the center (50%) of the range, with Goldbach levels mapped symmetrically above and below
+- **Fixed Mode** — Calculates the Po3 partition from base 0 that contains the current price, with optional half-shift offset for alignment tuning
+
+**Po3 Range Sizes**
+- Preset ranges following the Power of 3 sequence: 3, 9, 27, 81, 243, 729, 2187, 6561, 19683, 59049, 177,147, 531,441
+- **Custom range** option for any value
+- **Auto-Calculate Po3** — uses the 75th percentile of the Average Daily Range (configurable lookback) to automatically select the optimal Po3 range for the current instrument
+
+**Level Types**
+- **Goldbach Levels** — Premium (100, 97, 89, 83, 71, 59, 53) and Discount (0, 3, 11, 17, 29, 41, 47) levels derived from Goldbach prime partitions
+- **Non-Goldbach / Semi-Prime Levels** — 23, 35, 65, 77
+- **Inverted Goldbach Levels** — 14, 32, 38, 56, 74, 79, 92, 95, 98
+- **Midpoint Levels** — Calculated between adjacent main levels
+- **Equilibrium (50%)** — Drawn in Fixed mode as a separate reference
+- **Premium/Discount area shading** with PD zone labels (High, Rejection, Order Block, FVG, Liq Void, Breaker, Mitigation)
+
+**Po3 Stop Runs & Standard Deviation Levels**
+- **Stop run levels** projected beyond the range boundaries at configurable distances (PO3-2, PO3-3, or PO3-4 subdivisions)
+- **Standard deviation levels** — evenly spaced interval lines radiating from the fix price, useful for measuring extensions
+
+**Smart Level Merging**
+- When multiple levels fall within a configurable tick threshold, they merge into a single labeled line showing all confluent levels — reduces chart clutter while preserving information
+
+**Settlement Detection**
+- **Auto-detects settlement times** per instrument (ES/NQ at 4:00 PM, GC at 1:30 PM, CL at 2:30 PM, etc.)
+- Manual override for settlement hour/minute and session start time
+- Timezone-aware with configurable timezone setting
+- Uses 1-minute data series for precise settlement price lookup
+
+**Info Box**
+- On-chart info panel showing active Po3 range, fix price, range high/low, calculated ADR, and recommended Po3
+- Configurable position (Top Left, Top Right, Bottom Left, Bottom Right) and font size
+
+---
+
 ### 🔴 [RedTail Auto-VWAP](https://github.com/3astbeast/RedTail-Auto-VWAP)
 
 An all-in-one VWAP and key level indicator for NinjaTrader 8 that automatically plots multiple anchored VWAPs across every timeframe that matters for futures trading — session, daily, weekly, monthly, yearly — plus Opening Range and Initial Balance zones with full historical lookback.
