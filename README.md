@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Free NinjaTrader 8 indicators built for futures traders who demand precision.</b><br>
-  Scalping-focused tools for MES, MNQ, MGC, and beyond.
+  Intraday trading focused tools for NQ, ES, GC, CL, and beyond.
 </p>
 
 <p align="center">
@@ -199,6 +199,48 @@ A price level indicator for NinjaTrader 8 based on Goldbach number theory applie
 **Info Box**
 - On-chart info panel showing active Po3 range, fix price, range high/low, calculated ADR, and recommended Po3
 - Configurable position (Top Left, Top Right, Bottom Left, Bottom Right) and font size
+
+---
+
+### 🔴 [RedTail Key Levels](https://github.com/3astbeast/RedTail-Key-Levels)
+
+An all-in-one reference level indicator for NinjaTrader 8 that plots pivots, prior session ranges, Monday range, Globex session range, RTH range, and Fibonacci retracements — all on a single chart with smart level merging to keep things clean.
+
+**Pivot Points**
+- Standard pivot calculation (PP, R1, R2, R3, S1, S2, S3) with **midline levels** between each (R1M, R2M, R3M, S1M, S2M, S3M)
+- Pivot range: **Daily**, **Weekly**, or **Monthly**
+- HLC source: **Intraday calculation**, **Daily bars**, or **User-defined values**
+- Toggle pivots and midlines independently
+
+**Prior Session Ranges**
+- **Previous Day High/Low (PDH/PDL)**
+- **Previous Week High/Low (PWH/PWL)**
+- **Previous Month High/Low (PMH/PML)**
+- Each toggleable independently
+
+**Monday Range**
+- Tracks the Monday session (Sunday 6 PM – Monday 5 PM) high and low
+- Plots as reference levels for the rest of the week — useful for ICT Monday range concepts
+
+**Globex Session Range**
+- Tracks the full Globex week (Sunday 6 PM – Friday 5 PM) high and low
+- Plots developing range in real time
+
+**RTH Session Range**
+- Tracks the current Regular Trading Hours session (9:30 AM – 4:00 PM ET) high and low
+- EST timezone-aware detection
+
+**Fibonacci Levels**
+- Up to **10 configurable Fibonacci retracement levels** plotted between the prior session's high and low
+- Default levels: 23.6%, 38.2%, 50%, 61.8%, 78.6% (set any to 0.0 to disable)
+
+**Level Merging**
+- Configurable **merge tolerance** — when multiple levels from different categories land within the same tick threshold, they collapse into a single line to reduce clutter
+
+**Display**
+- All levels exposed as plot outputs (PP, R1–R3, S1–S3, midlines, PDH/PDL, PWH/PWL, PMH/PML, Monday H/L, Globex H/L, NYH/NYL, Fib levels)
+- Historical mode toggle to show or hide previous sessions' levels
+- Configurable line width for all levels
 
 ---
 
