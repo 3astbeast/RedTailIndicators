@@ -154,7 +154,7 @@ A buy/sell volume separation indicator for NinjaTrader 8 that splits each bar's 
 
 ### 🔴 [RedTail Market Structure](https://github.com/3astbeast/RedTail-Market-Structure)
 
-A full Smart Money / ICT-style market structure indicator for NinjaTrader 8 that goes far beyond basic BOS detection. Combines swing structure analysis, volumized order blocks, integrated Fibonacci retracements with volume profiles, strong/weak level scoring, equal highs/lows detection, liquidity sweep identification, and a built-in voice alert system — all in one indicator.
+A full market structure indicator for NinjaTrader 8 that goes far beyond basic BOS detection. Combines swing structure analysis, volumized order blocks, integrated Fibonacci retracements with volume profiles, strong/weak level scoring, equal highs/lows detection, liquidity sweep identification, and a built-in voice alert system — all in one indicator.
 
 **Market Structure Core**
 - **Break of Structure (BOS)** and **Change of Character (CHoCH)** detection with configurable swing length
