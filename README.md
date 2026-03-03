@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="[https://avatars.githubusercontent.com/u/209633456?v=4]" width="200" alt="RedTail Indicators Logo"/>
+  <img src="https://github.com/3astbeast/RedTailIndicators/blob/main/redtail-logo.png" width="200" alt="RedTail Indicators Logo"/>
 </p>
 
 <h1 align="center">RedTail Indicators</h1>
 
 <p align="center">
   <b>Free NinjaTrader 8 indicators built for futures traders who demand precision.</b><br>
-  Scalping-focused tools for ES, NQ, GC, and beyond.
+  Scalping-focused tools for MES, MNQ, MGC, and beyond.
 </p>
 
 <p align="center">
@@ -23,11 +23,46 @@
 
 ## 📊 Indicators
 
-### 🔴 [RedTail Volume Profile](https://github.com/3astbeast/RedTail-Volume-Profile)
+---
 
-> *Description coming soon — uploading code for detailed writeup.*
+### 🔴 [RedTail Volume Profile V2](https://github.com/3astbeast/RedTail-Volume-Profile)
 
-<!-- Features, screenshots, and usage notes will go here -->
+A comprehensive volume profile indicator for NinjaTrader 8 with institutional-grade features packed into nearly 10,000 lines of NinjaScript. This is not a basic volume profile — it's a full-featured analysis suite designed for serious futures scalpers.
+
+**Profile Modes**
+- **Session** — Per-session profiles with configurable lookback
+- **Visible Range** — Dynamically calculates across your visible chart area
+- **Weekly / Monthly** — Higher timeframe profiles
+- **Composite** — Aggregate profiles across custom date ranges (days back, weeks back, or custom start/end dates)
+- **Anchored** — Session-by-session profiles pinned to their respective time periods
+
+**Key Features**
+- **Point of Control (POC)** and **Value Area (VAH/VAL)** with full visual customization
+- **Naked Levels** — Tracks daily and weekly naked POC, VAH, and VAL levels that haven't been revisited, with configurable touch count removal and max levels to display
+- **Previous Day Levels** — POC, VAH, VAL, High, and Low from the prior session
+- **Previous Week Levels** — POC, VAH, VAL, High, and Low from the prior week
+- **Overnight Session Levels** — Separate POC, VAH, VAL, High, and Low for the overnight session (default 6:00 PM – 8:30 AM, fully configurable)
+- **Dual Profile Mode** — Overlays both weekly and session profiles simultaneously with independent settings for each
+- **Low Volume Nodes (LVN)** — Detects and highlights low-volume gaps in the profile
+- **Move Profiles** — Automatically detects breakout moves from consolidation and builds volume profiles for each move
+- **Candle Profiles** — Tick-based volume profiles rendered on individual candles
+- **DOM Visualization (Domdicator)** — Live order book depth visualization directly on the chart with historical order tracking
+- **Gradient Fill** — Optional gradient rendering for visual depth
+- **Adaptive Rendering** — Auto-adjusts bar sizing with smoothing for clean visuals at any zoom level
+
+**Volume Display Types:** Standard, Bullish, Bearish, or Both (split delta)
+
+**Alerts**
+- Proximity alerts when price approaches any key level (Previous Day, Previous Week, Overnight, Naked Daily, Naked Weekly)
+- Configurable distance in ticks with sound alerts
+- Auto-rearm on new session
+
+**Additional Details**
+- Every line, level, and label is independently customizable (color, dash style, thickness, opacity)
+- Touch count tracking with optional label display
+- British/US date format support
+- Price value labels on all reference levels
+- Exposed plot outputs for POC, VAH, VAL, PD levels, and Overnight levels — usable by strategies or other indicators
 
 ---
 
@@ -35,23 +70,17 @@
 
 > *Description coming soon — uploading code for detailed writeup.*
 
-<!-- Features, screenshots, and usage notes will go here -->
-
 ---
 
 ### 🔴 [RedTail Market Structure](https://github.com/3astbeast/RedTail-Market-Structure)
 
 > *Description coming soon — uploading code for detailed writeup.*
 
-<!-- Features, screenshots, and usage notes will go here -->
-
 ---
 
 ### 🔴 [RedTail EMA Cloud](https://github.com/3astbeast/RedTail-EMA-Cloud)
 
 > *Description coming soon — uploading code for detailed writeup.*
-
-<!-- Features, screenshots, and usage notes will go here -->
 
 ---
 
