@@ -46,7 +46,6 @@ A comprehensive volume profile indicator for NinjaTrader 8 with institutional-gr
 - **Low Volume Nodes (LVN)** — Detects and highlights low-volume gaps in the profile
 - **Move Profiles** — Automatically detects breakout moves from consolidation and builds volume profiles for each move
 - **Candle Profiles** — Tick-based volume profiles rendered on individual candles
-- **DOM Visualization (Domdicator)** — Live order book depth visualization directly on the chart with historical order tracking
 - **Gradient Fill** — Optional gradient rendering for visual depth
 - **Adaptive Rendering** — Auto-adjusts bar sizing with smoothing for clean visuals at any zoom level
 
