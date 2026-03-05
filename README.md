@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <i>All indicators are free to use for personal trading. If you find them helpful, donations are always appreciated but never required. Please don't redistribute, rename, or resell this code — if you'd like to use it in a product or share it beyond personal use, just reach out first. I'm happy to talk. If I find you've repackaged these indicators and are attemtping to sell them for profit without my permission, you better buckle up! These are meant to be free and open source and should always remain that way.</i>
+  <i>All indicators are free to use. If you find them helpful, donations are always appreciated but never required.</i>
 </p>
 
 ---
@@ -46,6 +46,7 @@ A comprehensive volume profile indicator for NinjaTrader 8 with institutional-gr
 - **Low Volume Nodes (LVN)** — Detects and highlights low-volume gaps in the profile
 - **Move Profiles** — Automatically detects breakout moves from consolidation and builds volume profiles for each move
 - **Candle Profiles** — Tick-based volume profiles rendered on individual candles
+- **DOM Visualization (Domdicator)** — Live order book depth visualization directly on the chart with historical order tracking
 - **Gradient Fill** — Optional gradient rendering for visual depth
 - **Adaptive Rendering** — Auto-adjusts bar sizing with smoothing for clean visuals at any zoom level
 
@@ -121,7 +122,7 @@ A custom chart toolbar for NinjaTrader 8 that adds quick-access buttons for draw
 
 ### 🔴 [RedTail Volume](https://github.com/3astbeast/RedTail-Volume)
 
-A buy/sell volume separation indicator for NinjaTrader 8 that splits each bar's volume into estimated buying and selling pressure using OHLC proxy ratios, then stacks the winning side on top for instant visual read. Includes volume statistics panels and daily range tracking — all rendered in a dedicated sub-panel below the chart.
+A buy/sell volume separation indicator for NinjaTrader 8 that splits each bar's volume into estimated buying and selling pressure using OHLC proxy ratios, then stacks the winning side on top for instant visual read. Includes Ripster-style volume statistics panels and daily range tracking — all rendered in a dedicated sub-panel below the chart.
 
 **Buy/Sell Volume Separation**
 - Uses candle OHLC to calculate a proxy buy/sell ratio for each bar — (Close - Low) / Range for buyers, (High - Close) / Range for sellers
@@ -471,15 +472,91 @@ A visual enhancement indicator for NinjaTrader 8 that draws subtle drop shadows 
 
 ---
 
+### 🔴 [Session Opening Bar Range](https://github.com/3astbeast/Session-Opening-Bar-Range)
+
+A session opening bar range indicator for NinjaTrader 8 that captures the first bar's high, low, and midpoint of a configurable session, then projects those levels forward with optional statistical extensions, range extensions, and OR rotation levels. Useful for opening range breakout strategies and session-based level work.
+
+> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofessorgreen)**. NinjaTrader 8 conversion by @_hawkeye_13.
+
+**Session Presets**
+- New York RTH (9:30 AM – 4:00 PM), New York Futures (8:00 AM – 5:00 PM), London (2:00 AM – 8:00 AM), Asia (7:00 PM – 2:00 AM), Midnight to 5 PM, ZB/Gold/Silver OR, CL OR, and Custom with HHMM start/end times
+- Configurable timezone with common presets (America/New_York, America/Chicago, Europe/London, Asia/Tokyo)
+
+**Opening Bar Range**
+- Configurable OBR timeframe (e.g., 5-minute opening bar) — adds a secondary data series at the specified resolution
+- Draws high, low, and optional midline with bullish/bearish color coding based on the opening bar's close vs open
+- Projection offset extends levels forward by a configurable number of bars
+- Historical session display with configurable max history count
+
+**Statistical Levels**
+- Computed from a rolling lookback of historical OR ranges (default 60 periods)
+- Two standard deviation bands above and below the OR range, with configurable multipliers (default 1σ and 2σ)
+- Independent line color, width, and label size
+
+**Range Extensions**
+- Projects the OR range size above and below as equidistant levels
+- Configurable range multiplier and number of extension levels (up to 20)
+- Independent line color, width, label color, and label size
+
+**OR Rotations**
+- 5 rotation levels above and below the OR high/low at a fixed increment (e.g., 65 points for NQ, 15 for ES)
+- Independent line color, style, width, label color, and label size
+
+**Rendering**
+- All rendering via SharpDX for performance
+- Labels positionable on the left or right side of the zone
+- Optional price display in labels
+
+---
+
+### 🔴 [Session Statistical Levels](https://github.com/3astbeast/Session-Statistical-Levels)
+
+A percentile-based session range level indicator for NinjaTrader 8 that tracks Asia, London, and NY sessions independently, calculates historical range distributions using percentile statistics, and projects those levels from the current session's open price. Answers the question: "Based on the last N sessions, how far is price likely to move from here?"
+
+> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofessorgreen)**. NinjaTrader 8 conversion by @_hawkeye_13.
+
+**Sessions**
+- **Asia** (7:00 PM – 2:00 AM ET), **London** (2:00 AM – 8:00 AM ET), **NY** (8:00 AM – 4:00 PM ET) — each toggleable independently
+- **Custom session** with configurable HHMM start/end and custom label
+- All times in Eastern Time
+
+**Statistical Levels (from session open)**
+- **Median (P50)** — 50th percentile of historical session ranges
+- **IQR Band (P25/P75)** — Interquartile range boundaries
+- **P10/P90** — 10th and 90th percentile extremes
+- **P95** — 95th percentile for identifying historically extreme sessions
+- **Mean** — Average range with optional ±1 standard deviation band
+- All levels projected symmetrically above and below the session open price
+- Each level type independently toggleable
+
+**Directional MAE/MFE Levels**
+- Tracks Max Adverse Excursion and Max Favorable Excursion from session open, separated by bullish vs bearish days
+- **Bull MFE50/MFE75** — Median and 75th percentile upside on bullish sessions
+- **Bull MAE50** — Median downside on bullish sessions
+- **Bear MFE50/MFE75** — Median and 75th percentile downside on bearish sessions
+- **Bear MAE50** — Median upside on bearish sessions
+
+**Fill Shading**
+- Optional IQR and P90 band fills between upper and lower levels for quick visual range assessment
+
+**Stats Table**
+- On-chart statistics table showing per-session lookback count, P25/P50/P75/P90 values, Mean/SD, and bull/bear session counts
+- Positionable at any corner of the chart
+
+**Configuration**
+- Configurable lookback period (default 100 sessions, 50+ recommended)
+- Independent color settings for every level type (Median, IQR, P10/P90, P95, Mean, StDev, MAE, MFE) plus fill colors
+- Label sizes: Tiny, Small, Normal
+
+---
+
 ## 🛠 Installation
 
-1. Download the .cs file from the indicator's repository
-2. Copy the .cs to documents\Ninja Trader 8\bin\custom\indicators
-3. Open Ninja Trader (if not already open) 
-4. In control center, go to New --> Ninja Script Editor
-5. Expand the Indicator Tree, find your new indicator, double click to open it
-6. At the top of the Editor window, click the "Compile" button
-7. That's it!
+1. Download the `.cs` file from the indicator's repository
+2. Open NinjaTrader 8
+3. Go to **Tools → Import → NinjaScript Add-On**
+4. Select the downloaded file and click **OK**
+5. The indicator will appear in your **Indicators** list — add it to any chart
 
 ## 📬 Contact
 
