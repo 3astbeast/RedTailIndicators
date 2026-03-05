@@ -476,7 +476,7 @@ A visual enhancement indicator for NinjaTrader 8 that draws subtle drop shadows 
 
 A session opening bar range indicator for NinjaTrader 8 that captures the first bar's high, low, and midpoint of a configurable session, then projects those levels forward with optional statistical extensions, range extensions, and OR rotation levels. Useful for opening range breakout strategies and session-based level work.
 
-> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofessorgreen)**. NinjaTrader 8 conversion by @_hawkeye_13.
+> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofgreen)**. NinjaTrader 8 conversion by @_hawkeye_13.
 
 **Session Presets**
 - New York RTH (9:30 AM – 4:00 PM), New York Futures (8:00 AM – 5:00 PM), London (2:00 AM – 8:00 AM), Asia (7:00 PM – 2:00 AM), Midnight to 5 PM, ZB/Gold/Silver OR, CL OR, and Custom with HHMM start/end times
@@ -513,7 +513,7 @@ A session opening bar range indicator for NinjaTrader 8 that captures the first 
 
 A percentile-based session range level indicator for NinjaTrader 8 that tracks Asia, London, and NY sessions independently, calculates historical range distributions using percentile statistics, and projects those levels from the current session's open price. Answers the question: "Based on the last N sessions, how far is price likely to move from here?"
 
-> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofessorgreen)**. NinjaTrader 8 conversion by @_hawkeye_13.
+> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofgreen)**. NinjaTrader 8 conversion by @_hawkeye_13.
 
 **Sessions**
 - **Asia** (7:00 PM – 2:00 AM ET), **London** (2:00 AM – 8:00 AM ET), **NY** (8:00 AM – 4:00 PM ET) — each toggleable independently
