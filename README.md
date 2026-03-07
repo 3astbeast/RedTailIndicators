@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <i>All indicators are free to use. If you find them helpful, donations are always appreciated but never required.</i>
+  <i>All indicators are free to use. If you find them helpful, donations are always appreciated but never required. if you'd like to use some of my code for a project you're working on, please ask, I'd love to take. .</i>
 </p>
 
 ---
