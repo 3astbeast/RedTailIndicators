@@ -559,7 +559,7 @@ A percentile-based session range level indicator for NinjaTrader 8 that tracks A
 5. Expand the Indicator Tree, find your new indicator, double click to open it
 6. At the top of the Editor window, click the "Compile" button
 7. That's it
-8. Please note that Market Structure and Auto VWAP have special installation instructions which can be found in the README in their repoisitories.
+8. Please note that Market Structure and Auto VWAP have special installation instructions which can be found in the README in their repositories.
 
 ## 📬 Contact
 
