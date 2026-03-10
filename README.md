@@ -581,7 +581,7 @@ A percentile-based session range level indicator for NinjaTrader 8 that tracks A
 
 A dual-session volume profile indicator for NinjaTrader 8 that builds volume profiles for both the current and previous session simultaneously, overlays the previous session's profile onto the current session for direct comparison, and plots daily (6 PM ET) and weekly open levels. Supports 8 session types from intraday forex sessions to yearly periods.
 
-> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofessorgreen)** (lucymatos). NinjaTrader 8 conversion by @_hawkeye_13.
+> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofgreen)** (lucymatos). NinjaTrader 8 conversion by @_hawkeye_13.
 
 **Dual Volume Profiles**
 - **Current Session Profile** — Live-updating volume profile with POC, VAH/VAL, optional Value Area box, session boundary box, and session label. Configurable resolution (5–100 rows), Value Area percentage, and bar mode.
