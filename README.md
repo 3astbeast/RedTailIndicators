@@ -476,8 +476,6 @@ A visual enhancement indicator for NinjaTrader 8 that draws subtle drop shadows 
 
 An adaptive swing-anchored VWAP indicator for NinjaTrader 8 that automatically detects swing highs and lows, then anchors a VWAP from each pivot point using EWMA (Exponentially Weighted Moving Average) smoothing instead of traditional cumulative VWAP — producing a smoother, more responsive VWAP that adapts to changing market conditions.
 
-> Converted from Pine Script by Zeiierman (CC BY-NC-SA 4.0).
-
 **How It Works**
 - Detects swing highs and lows using a configurable lookback period
 - When a swing direction change occurs (new swing high after a series of lows, or vice versa), the VWAP re-anchors from the pivot bar and recalculates forward to the current bar
