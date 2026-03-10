@@ -476,6 +476,8 @@ A visual enhancement indicator for NinjaTrader 8 that draws subtle drop shadows 
 
 An adaptive swing-anchored VWAP indicator for NinjaTrader 8 that automatically detects swing highs and lows, then anchors a VWAP from each pivot point using EWMA (Exponentially Weighted Moving Average) smoothing instead of traditional cumulative VWAP — producing a smoother, more responsive VWAP that adapts to changing market conditions.
 
+> Converted from Pine Script by Zeiierman (CC BY-NC-SA 4.0).
+
 **How It Works**
 - Detects swing highs and lows using a configurable lookback period
 - When a swing direction change occurs (new swing high after a series of lows, or vice versa), the VWAP re-anchors from the pivot bar and recalculates forward to the current bar
@@ -572,6 +574,40 @@ A percentile-based session range level indicator for NinjaTrader 8 that tracks A
 - Configurable lookback period (default 100 sessions, 50+ recommended)
 - Independent color settings for every level type (Median, IQR, P10/P90, P95, Mean, StDev, MAE, MFE) plus fill colors
 - Label sizes: Tiny, Small, Normal
+
+---
+
+### 🔴 [Sessions VP with Previous Session VP & Opens](https://github.com/3astbeast/Sessions-VP)
+
+A dual-session volume profile indicator for NinjaTrader 8 that builds volume profiles for both the current and previous session simultaneously, overlays the previous session's profile onto the current session for direct comparison, and plots daily (6 PM ET) and weekly open levels. Supports 8 session types from intraday forex sessions to yearly periods.
+
+> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofessorgreen)** (lucymatos). NinjaTrader 8 conversion by @_hawkeye_13.
+
+**Dual Volume Profiles**
+- **Current Session Profile** — Live-updating volume profile with POC, VAH/VAL, optional Value Area box, session boundary box, and session label. Configurable resolution (5–100 rows), Value Area percentage, and bar mode.
+- **Previous Session Profile** — Snapshots the completed prior session's volume profile and overlays it onto the current session's price range for direct visual comparison. Previous POC/VAH/VAL extend forward as dashed lines to the current bar.
+
+**Session Types**
+- Tokyo, London, New York, Daily, Weekly, Monthly, Quarterly, and Yearly
+- Current and previous session types are independently selectable — you can run a Daily current profile against a Weekly previous profile, for example
+
+**Volume Bar Modes**
+- **Mode 1** — Green (up volume) only
+- **Mode 2** — Green + Red stacked side by side (default)
+- **Mode 3** — Green right, Red left of the session anchor
+
+**Forex Session Boxes**
+- Optional Tokyo, London, and New York session range boxes with labels, drawn as dashed boundary rectangles with fill
+
+**Open Levels**
+- **6 PM ET Daily Open** — Horizontal line from the first bar at or after 6 PM Eastern, extending to the current bar
+- **Weekly Open** — Horizontal line from Sunday 6 PM ET, extending to the current bar
+- Both with configurable color, width, line style (Solid/Dashed/Dotted), and optional labels
+
+**Visual**
+- Fully independent color, opacity, and line width settings for every element across both current and previous sessions
+- Customizable POC/VAH/VAL label text with prefixed "C:" and "P:" to distinguish current vs previous
+- All rendering via SharpDX
 
 ---
 
