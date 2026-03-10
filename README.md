@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <i>All indicators are free to use. If you find them helpful, donations are always appreciated but never required. if you'd like to use some of my code for a FREE project you're working on, go for it. Under no circumstance is anyone allowed to take my code, re brand it and sell it for profit. These indicators are meant to be free and open source. Always.</i>
+  <i>All indicators are free to use. If you find them helpful, donations are always appreciated but never required. If you'd like to use some of my code for a FREE project you're working on, go for it. Under no circumstance is anyone allowed to take my code, re-brand it and sell it for profit. These indicators are meant to be free and open source. Always.</i>
 </p>
 
 ---
@@ -27,7 +27,7 @@
 
 ### 🔴 [RedTail Volume Profile](https://github.com/3astbeast/RedTail-Volume-Profile)
 
-A comprehensive volume profile indicator for NinjaTrader 8 with institutional-grade features packed into nearly 10,000 lines of NinjaScript. This is not a basic volume profile — it's a full-featured analysis suite designed for serious futures traders.
+A comprehensive volume profile indicator for NinjaTrader 8 with institutional-grade features packed into nearly 10,000 lines of NinjaScript. This is not a basic volume profile — it's a full-featured analysis suite designed for serious futures scalpers.
 
 **Profile Modes**
 - **Session** — Per-session profiles with configurable lookback
@@ -154,7 +154,7 @@ A buy/sell volume separation indicator for NinjaTrader 8 that splits each bar's 
 
 ### 🔴 [RedTail Market Structure](https://github.com/3astbeast/RedTail-Market-Structure)
 
-A full market structure indicator for NinjaTrader 8 that goes far beyond basic BOS detection. Combines swing structure analysis, volumized order blocks, integrated Fibonacci retracements with volume profiles, strong/weak level scoring, equal highs/lows detection, liquidity sweep identification, and a built-in voice alert system — all in one indicator.
+A full Smart Money / ICT-style market structure indicator for NinjaTrader 8 that goes far beyond basic BOS detection. Combines swing structure analysis, volumized order blocks, integrated Fibonacci retracements with volume profiles, strong/weak level scoring, equal highs/lows detection, liquidity sweep identification, and a built-in voice alert system — all in one indicator.
 
 **Market Structure Core**
 - **Break of Structure (BOS)** and **Change of Character (CHoCH)** detection with configurable swing length
@@ -472,11 +472,38 @@ A visual enhancement indicator for NinjaTrader 8 that draws subtle drop shadows 
 
 ---
 
+### 🔴 [RedTail Swing Anchored VWAP](https://github.com/3astbeast/RedTail-Swing-Anchored-VWAP)
+
+An adaptive swing-anchored VWAP indicator for NinjaTrader 8 that automatically detects swing highs and lows, then anchors a VWAP from each pivot point using EWMA (Exponentially Weighted Moving Average) smoothing instead of traditional cumulative VWAP — producing a smoother, more responsive VWAP that adapts to changing market conditions.
+
+> Converted from Pine Script by Zeiierman (CC BY-NC-SA 4.0).
+
+**How It Works**
+- Detects swing highs and lows using a configurable lookback period
+- When a swing direction change occurs (new swing high after a series of lows, or vice versa), the VWAP re-anchors from the pivot bar and recalculates forward to the current bar
+- Uses EWMA instead of cumulative VWAP — an exponential decay function weights recent volume more heavily, so the VWAP reacts faster to current price action while still respecting the anchor point
+- The VWAP line changes color based on the current swing direction: bullish (anchored from a swing low) or bearish (anchored from a swing high)
+
+**Adaptive Price Tracking**
+- **Adaptive Price Tracking (APT)** — Controls the EWMA half-life, which determines how quickly the VWAP reacts to new data. Lower values = tighter/faster tracking, higher values = smoother/slower.
+- **ATR-Adaptive Mode** — When enabled, the APT value automatically adjusts based on current volatility relative to its own smoothed average. In high-volatility environments the VWAP tightens up; in low-volatility conditions it smooths out. Controlled by a Volatility Bias parameter that sets how aggressively volatility influences the adaptation.
+
+**Historical Display**
+- Optionally show all previous VWAP segments from prior swing anchors, creating a visual trail of swing-to-swing VWAPs across the chart
+
+**Visual**
+- Independent bullish and bearish VWAP colors
+- Configurable line width (1–10), opacity (0–100%), and dash style
+- VWAP value exposed as a plot output for use in the data box, crosshair, or by other indicators/strategies
+- Rendered via SharpDX for performance
+
+---
+
 ### 🔴 [Session Opening Bar Range](https://github.com/3astbeast/Session-Opening-Bar-Range)
 
 A session opening bar range indicator for NinjaTrader 8 that captures the first bar's high, low, and midpoint of a configurable session, then projects those levels forward with optional statistical extensions, range extensions, and OR rotation levels. Useful for opening range breakout strategies and session-based level work.
 
-> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofgreen)**. 
+> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofessorgreen)**. NinjaTrader 8 conversion by @_hawkeye_13.
 
 **Session Presets**
 - New York RTH (9:30 AM – 4:00 PM), New York Futures (8:00 AM – 5:00 PM), London (2:00 AM – 8:00 AM), Asia (7:00 PM – 2:00 AM), Midnight to 5 PM, ZB/Gold/Silver OR, CL OR, and Custom with HHMM start/end times
@@ -513,7 +540,7 @@ A session opening bar range indicator for NinjaTrader 8 that captures the first 
 
 A percentile-based session range level indicator for NinjaTrader 8 that tracks Asia, London, and NY sessions independently, calculates historical range distributions using percentile statistics, and projects those levels from the current session's open price. Answers the question: "Based on the last N sessions, how far is price likely to move from here?"
 
-> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofgreen)**. 
+> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofessorgreen)**. NinjaTrader 8 conversion by @_hawkeye_13.
 
 **Sessions**
 - **Asia** (7:00 PM – 2:00 AM ET), **London** (2:00 AM – 8:00 AM ET), **NY** (8:00 AM – 4:00 PM ET) — each toggleable independently
@@ -552,14 +579,15 @@ A percentile-based session range level indicator for NinjaTrader 8 that tracks A
 
 ## 🛠 Installation
 
-1. Download the .cs file from the indicator's repository
-2. Copy the .cs to documents\Ninja Trader 8\bin\custom\indicators
-3. Open Ninja Trader (if not already open) 
-4. In control center, go to New --> Ninja Script Editor
-5. Expand the Indicator Tree, find your new indicator, double click to open it
-6. At the top of the Editor window, click the "Compile" button
-7. That's it
-8. Please note that Market Structure and Auto VWAP have special installation instructions which can be found in the README in their repositories.
+1. Download the `.cs` file from the indicator's repository
+2. Copy the `.cs` to `Documents\NinjaTrader 8\bin\Custom\Indicators`
+3. Open NinjaTrader (if not already open)
+4. In Control Center, go to **New → NinjaScript Editor**
+5. Expand the Indicator tree, find your new indicator, double-click to open it
+6. At the top of the Editor window, click the **Compile** button
+7. That's it!
+
+> **Note:** Market Structure and Auto VWAP have special installation instructions which can be found in the README in their repositories.
 
 ## 📬 Contact
 
