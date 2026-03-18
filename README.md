@@ -154,7 +154,7 @@ A buy/sell volume separation indicator for NinjaTrader 8 that splits each bar's 
 
 ### 🔴 [RedTail Market Structure](https://github.com/3astbeast/RedTail-Market-Structure)
 
-A full Smart Money / ICT-style market structure indicator for NinjaTrader 8 that goes far beyond basic BOS detection. Combines swing structure analysis, volumized order blocks, integrated Fibonacci retracements with volume profiles, strong/weak level scoring, equal highs/lows detection, liquidity sweep identification, and a built-in voice alert system — all in one indicator.
+A full market structure indicator for NinjaTrader 8 that goes far beyond basic BOS detection. Combines swing structure analysis, volumized order blocks, integrated Fibonacci retracements with volume profiles, strong/weak level scoring, equal highs/lows detection, liquidity sweep identification, and a built-in voice alert system — all in one indicator.
 
 **Market Structure Core**
 - **Break of Structure (BOS)** and **Change of Character (CHoCH)** detection with configurable swing length
@@ -392,6 +392,37 @@ Each VWAP has independent color, line style, and optional standard deviation ban
 
 ---
 
+### 🔴 [RedTail VWAP Fib Bands](https://github.com/3astbeast/RedTail-VWAP-Fib-Bands)
+
+A MIDAS VWAP indicator for NinjaTrader 8 with three standard deviation band pairs and configurable Fibonacci sub-bands interpolated between them. Based on Paul Levine's MIDAS (Market Interpretation/Data Analysis System) methodology — not a replacement for the standard session VWAP, but a complementary tool that frames the VWAP within a volatility envelope for identifying mean-reversion zones, trend extensions, and statistical extremes.
+
+**How It Differs From Standard VWAP**
+- Unlike the standard VWAP, this indicator wraps it in three band pairs (±1σ, ±2σ, ±3σ) plus Fibonacci sub-bands, creating a complete volatility framework around the VWAP anchor
+- Uses MIDAS-style anchoring — Session (futures open), Timeframe (Daily/Weekly/Monthly/Quarterly/Yearly), or a fixed Date anchor — rather than being limited to a single session reset
+- Fibonacci sub-bands are interpolated between MIDAS and the ±3σ extremes, giving you intermediate reference levels between the standard deviation bands (e.g., 0.333 ≈ ±1σ, 0.5 = midpoint, 0.667 ≈ ±2σ, 0.786 = deep extension)
+
+**Anchor Methods**
+- **Session** — Resets at a configurable hour (default: 6 PM ET / futures open). Bars before the session hour belong to the prior session.
+- **Timeframe** — Resets at the start of each new Daily, Weekly, Monthly, Quarterly, or Yearly period
+- **Date** — Anchors from a fixed date and never resets — useful for anchoring from a specific swing high/low in history
+
+**Band Structure**
+- **±1σ (Band 1)** — Inner mean-reversion zone. Price oscillating between +1σ and -1σ indicates a range-bound market.
+- **±2σ (Band 2)** — Extension zone. A close beyond ±2σ signals trending conditions.
+- **±3σ (Band 3)** — Extreme zone. A close beyond ±3σ is a statistically rare event.
+- **Fibonacci Sub-Bands** — Configurable comma-separated ratios (default: 0.333, 0.5, 0.667, 0.786) interpolated between MIDAS and ±3σ. Add or remove levels freely.
+
+**Fill Zones**
+- Three graduated fill zones between the band pairs, each with automatically decreasing opacity (inner = full, middle = 60%, outer = 35%) for a visual heat-map effect
+
+**Visual**
+- Independent Stroke settings (color, dash style, width) for MIDAS, Band 1, Band 2, Band 3, and Fibonacci lines
+- Optional right-edge labels for every level (σ notation for bands, decimal notation for fibs)
+- All core values exposed as plot outputs (MIDAS, Upper/Lower 1–3, all Fib levels) for use by strategies or other indicators
+- Rendered via SharpDX with polygon-traced fill geometry
+
+---
+
 ### 🔴 [RedTail Quick Alert](https://github.com/3astbeast/RedTail-Quick-Alert)
 
 A hotkey-driven price alert tool for NinjaTrader 8. Hover your mouse at any price level and press a keyboard shortcut to instantly place an alert line — no dialog boxes, no menus, no clicks on the price axis. Designed for speed during live trading.
@@ -475,6 +506,8 @@ A visual enhancement indicator for NinjaTrader 8 that draws subtle drop shadows 
 ### 🔴 [RedTail Swing Anchored VWAP](https://github.com/3astbeast/RedTail-Swing-Anchored-VWAP)
 
 An adaptive swing-anchored VWAP indicator for NinjaTrader 8 that automatically detects swing highs and lows, then anchors a VWAP from each pivot point using EWMA (Exponentially Weighted Moving Average) smoothing instead of traditional cumulative VWAP — producing a smoother, more responsive VWAP that adapts to changing market conditions.
+
+> Converted from Pine Script by Zeiierman (CC BY-NC-SA 4.0).
 
 **How It Works**
 - Detects swing highs and lows using a configurable lookback period
@@ -579,7 +612,7 @@ A percentile-based session range level indicator for NinjaTrader 8 that tracks A
 
 A dual-session volume profile indicator for NinjaTrader 8 that builds volume profiles for both the current and previous session simultaneously, overlays the previous session's profile onto the current session for direct comparison, and plots daily (6 PM ET) and weekly open levels. Supports 8 session types from intraday forex sessions to yearly periods.
 
-> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofgreen)** (lucymatos). NinjaTrader 8 conversion by @_hawkeye_13.
+> Original TradingView Pine Script by **[@notprofessorgreen](https://twitter.com/notprofessorgreen)** (lucymatos). NinjaTrader 8 conversion by @_hawkeye_13.
 
 **Dual Volume Profiles**
 - **Current Session Profile** — Live-updating volume profile with POC, VAH/VAL, optional Value Area box, session boundary box, and session label. Configurable resolution (5–100 rows), Value Area percentage, and bar mode.
