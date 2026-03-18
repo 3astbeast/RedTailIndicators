@@ -370,6 +370,14 @@ An all-in-one VWAP and key level indicator for NinjaTrader 8 that automatically 
 
 Each VWAP has independent color, line style, and optional standard deviation bands with configurable multiplier.
 
+- **VWAP Fib Bands (Built-In)**
+- Optional standard deviation bands and Fibonacci sub-bands wrapped around the Session VWAP — similar to the standalone RedTail VWAP Fib Bands indicator, but integrated directly into Auto-VWAP so you don't need a separate indicator on your chart
+- Two configurable σ band pairs: ±Band 1 (default 1.0σ, solid) and ±Band 2 (default 2.0σ, dashed)
+- Fibonacci sub-bands interpolated between VWAP and ±Band 2 at configurable ratios (default: 0.236, 0.382, 0.5, 0.618, 0.786)
+- Optional graduated fill zones between the band pairs with configurable opacity
+- Right-edge labels with σ notation for bands and decimal notation for fibs
+- Independent color and line style settings for Band 1, Band 2, and Fib sub-bands
+
 **Opening Range & Initial Balance**
 - **NY Opening Range** — Configurable time window (default 9:30–9:45 AM ET) with high/low lines, fill shading, and text labels
 - **Day Initial Balance** — Configurable time window (default 9:30–10:30 AM ET) with independent styling
