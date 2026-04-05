@@ -370,14 +370,6 @@ An all-in-one VWAP and key level indicator for NinjaTrader 8 that automatically 
 
 Each VWAP has independent color, line style, and optional standard deviation bands with configurable multiplier.
 
-- **VWAP Fib Bands (Built-In)**
-- Optional standard deviation bands and Fibonacci sub-bands wrapped around the Session VWAP — similar to the standalone RedTail VWAP Fib Bands indicator, but integrated directly into Auto-VWAP so you don't need a separate indicator on your chart
-- Two configurable σ band pairs: ±Band 1 (default 1.0σ, solid) and ±Band 2 (default 2.0σ, dashed)
-- Fibonacci sub-bands interpolated between VWAP and ±Band 2 at configurable ratios (default: 0.236, 0.382, 0.5, 0.618, 0.786)
-- Optional graduated fill zones between the band pairs with configurable opacity
-- Right-edge labels with σ notation for bands and decimal notation for fibs
-- Independent color and line style settings for Band 1, Band 2, and Fib sub-bands
-
 **Opening Range & Initial Balance**
 - **NY Opening Range** — Configurable time window (default 9:30–9:45 AM ET) with high/low lines, fill shading, and text labels
 - **Day Initial Balance** — Configurable time window (default 9:30–10:30 AM ET) with independent styling
@@ -398,14 +390,24 @@ Each VWAP has independent color, line style, and optional standard deviation ban
 - Configurable cooldown timer to prevent spam
 - Fallback to standard .wav sound files if voice generation fails
 
+**VWAP Fib Bands (Built-In)**
+- Optional standard deviation bands and Fibonacci sub-bands wrapped around the Session VWAP — similar to the standalone RedTail VWAP Fib Bands indicator, but integrated directly into Auto-VWAP so you don't need a separate indicator on your chart
+- Two configurable σ band pairs: ±Band 1 (default 1.0σ, solid) and ±Band 2 (default 2.0σ, dashed)
+- Fibonacci sub-bands interpolated between VWAP and ±Band 2 at configurable ratios (default: 0.236, 0.382, 0.5, 0.618, 0.786)
+- Optional graduated fill zones between the band pairs with configurable opacity
+- Right-edge labels with σ notation for bands and decimal notation for fibs
+- Independent color and line style settings for Band 1, Band 2, and Fib sub-bands
+
 ---
 
 ### 🔴 [RedTail VWAP Fib Bands](https://github.com/3astbeast/RedTail-VWAP-Fib-Bands)
 
 A MIDAS VWAP indicator for NinjaTrader 8 with three standard deviation band pairs and configurable Fibonacci sub-bands interpolated between them. Based on Paul Levine's MIDAS (Market Interpretation/Data Analysis System) methodology — not a replacement for the standard session VWAP, but a complementary tool that frames the VWAP within a volatility envelope for identifying mean-reversion zones, trend extensions, and statistical extremes.
 
+> Converted from Pine Script by Zeiierman (CC BY-NC-SA 4.0).
+
 **How It Differs From Standard VWAP**
-- Unlike the standard VWAP, this indicator wraps it in three band pairs (±1σ, ±2σ, ±3σ) plus Fibonacci sub-bands, creating a complete volatility framework around the VWAP anchor
+- Standard VWAP gives you one line — this indicator wraps it in three band pairs (±1σ, ±2σ, ±3σ) plus Fibonacci sub-bands, creating a complete volatility framework around the VWAP anchor
 - Uses MIDAS-style anchoring — Session (futures open), Timeframe (Daily/Weekly/Monthly/Quarterly/Yearly), or a fixed Date anchor — rather than being limited to a single session reset
 - Fibonacci sub-bands are interpolated between MIDAS and the ±3σ extremes, giving you intermediate reference levels between the standard deviation bands (e.g., 0.333 ≈ ±1σ, 0.5 = midpoint, 0.667 ≈ ±2σ, 0.786 = deep extension)
 
@@ -428,6 +430,33 @@ A MIDAS VWAP indicator for NinjaTrader 8 with three standard deviation band pair
 - Optional right-edge labels for every level (σ notation for bands, decimal notation for fibs)
 - All core values exposed as plot outputs (MIDAS, Upper/Lower 1–3, all Fib levels) for use by strategies or other indicators
 - Rendered via SharpDX with polygon-traced fill geometry
+
+---
+
+### 🔴 [RedTail Swing Anchored VWAP](https://github.com/3astbeast/RedTail-Swing-Anchored-VWAP)
+
+An adaptive swing-anchored VWAP indicator for NinjaTrader 8 that automatically detects swing highs and lows, then anchors a VWAP from each pivot point using EWMA (Exponentially Weighted Moving Average) smoothing instead of traditional cumulative VWAP — producing a smoother, more responsive VWAP that adapts to changing market conditions.
+
+> Converted from Pine Script by Zeiierman (CC BY-NC-SA 4.0).
+
+**How It Works**
+- Detects swing highs and lows using a configurable lookback period
+- When a swing direction change occurs (new swing high after a series of lows, or vice versa), the VWAP re-anchors from the pivot bar and recalculates forward to the current bar
+- Uses EWMA instead of cumulative VWAP — an exponential decay function weights recent volume more heavily, so the VWAP reacts faster to current price action while still respecting the anchor point
+- The VWAP line changes color based on the current swing direction: bullish (anchored from a swing low) or bearish (anchored from a swing high)
+
+**Adaptive Price Tracking**
+- **Adaptive Price Tracking (APT)** — Controls the EWMA half-life, which determines how quickly the VWAP reacts to new data. Lower values = tighter/faster tracking, higher values = smoother/slower.
+- **ATR-Adaptive Mode** — When enabled, the APT value automatically adjusts based on current volatility relative to its own smoothed average. In high-volatility environments the VWAP tightens up; in low-volatility conditions it smooths out. Controlled by a Volatility Bias parameter that sets how aggressively volatility influences the adaptation.
+
+**Historical Display**
+- Optionally show all previous VWAP segments from prior swing anchors, creating a visual trail of swing-to-swing VWAPs across the chart
+
+**Visual**
+- Independent bullish and bearish VWAP colors
+- Configurable line width (1–10), opacity (0–100%), and dash style
+- VWAP value exposed as a plot output for use in the data box, crosshair, or by other indicators/strategies
+- Rendered via SharpDX for performance
 
 ---
 
@@ -511,30 +540,40 @@ A visual enhancement indicator for NinjaTrader 8 that draws subtle drop shadows 
 
 ---
 
-### 🔴 [RedTail Swing Anchored VWAP](https://github.com/3astbeast/RedTail-Swing-Anchored-VWAP)
+### 🔴 [CVD Zones Premium](https://github.com/3astbeast/CVD-Zones-Premium)
 
-An adaptive swing-anchored VWAP indicator for NinjaTrader 8 that automatically detects swing highs and lows, then anchors a VWAP from each pivot point using EWMA (Exponentially Weighted Moving Average) smoothing instead of traditional cumulative VWAP — producing a smoother, more responsive VWAP that adapts to changing market conditions.
+A Cumulative Volume Delta heatmap indicator for NinjaTrader 8 that renders a thermal overlay directly on price candles, showing where buying and selling volume concentrates across price levels. Includes a companion indicator that mirrors the heatmap onto charts running different bar types (tick, range, Renko) for the same instrument — no data series linking required.
 
-> Converted from Pine Script by Zeiierman (CC BY-NC-SA 4.0).
+> Original TradingView Pine Script by **[B3AR_Trades](https://www.tradingview.com/u/B3AR_Trades/)**. NinjaTrader 8 conversion by @_hawkeye_13.
 
 **How It Works**
-- Detects swing highs and lows using a configurable lookback period
-- When a swing direction change occurs (new swing high after a series of lows, or vice versa), the VWAP re-anchors from the pivot bar and recalculates forward to the current bar
-- Uses EWMA instead of cumulative VWAP — an exponential decay function weights recent volume more heavily, so the VWAP reacts faster to current price action while still respecting the anchor point
-- The VWAP line changes color based on the current swing direction: bullish (anchored from a swing low) or bearish (anchored from a swing high)
+- Splits each bar's volume into estimated buy and sell components using the bar's OHLC range, then distributes the delta across 62 price bins spanning the lookback range
+- Each bin is color-mapped to a thermal gradient — bullish delta glows in one color, bearish in another, with intensity proportional to the magnitude
+- The result is a heatmap painted directly on the candle area showing where volume-weighted buying or selling pressure is concentrated
 
-**Adaptive Price Tracking**
-- **Adaptive Price Tracking (APT)** — Controls the EWMA half-life, which determines how quickly the VWAP reacts to new data. Lower values = tighter/faster tracking, higher values = smoother/slower.
-- **ATR-Adaptive Mode** — When enabled, the APT value automatically adjusts based on current volatility relative to its own smoothed average. In high-volatility environments the VWAP tightens up; in low-volatility conditions it smooths out. Controlled by a Volatility Bias parameter that sets how aggressively volatility influences the adaptation.
+**CVD Settings**
+- **Profile Depth** — Shallow (100 bars), Balanced (300), or Deep (600) lookback
+- **CVD Mode** — Net CVD (buy minus sell, showing directional pressure) or Cumulative CVD (buy plus sell, showing total activity)
+- **Threshold %** — Filters out bars where the buy/sell imbalance is below this percentage of the max, reducing noise
+- **Volume-Weighted Midpoint** — Assigns volume to HLC/3 instead of close price for smoother distribution
+- **Normalization Approximation** — Alternative normalization for more even gradient spread
 
-**Historical Display**
-- Optionally show all previous VWAP segments from prior swing anchors, creating a visual trail of swing-to-swing VWAPs across the chart
+**Heatmap Display**
+- **Thermal Sensitivity** — High Contrast, Balanced, or Smooth gradient curves
+- **Gradient Normalization** — Linear or Logarithmic scaling
+- **Heatmap Opacity** — 0 (fully opaque) to 100 (fully transparent)
+- **Hide Active Candle** — Clears heatmap bins overlapping the candle's open, close, midpoint, and HLC/3 so the candle body remains readable
 
-**Visual**
-- Independent bullish and bearish VWAP colors
-- Configurable line width (1–10), opacity (0–100%), and dash style
-- VWAP value exposed as a plot output for use in the data box, crosshair, or by other indicators/strategies
-- Rendered via SharpDX for performance
+**Color Themes**
+- 7 built-in themes: Traditional, Modern, Heatwave, Stealth, Aurora, Magma, Plasma
+- Custom theme option with user-defined bullish and bearish colors
+
+**Companion Indicator (CVDZonesPremiumCompanion)**
+- Add CVDZonesPremium to any chart (e.g., a 5-minute chart), then add the Companion to a different chart type for the same instrument (e.g., a 386-tick chart) — the Companion mirrors the heatmap automatically
+- Uses a static ConcurrentDictionary registry for zero-configuration discovery — no manual linking
+- Aligns source bars onto the companion chart using timestamps (not bar indices), so bar type mismatches are handled correctly
+- Inherits theme colors, CVD mode, sensitivity, and normalization from the source, with an optional opacity override
+- Connection status label shows whether the companion is connected or searching
 
 ---
 
